@@ -19,8 +19,8 @@ from fossdriver.config import FossConfig
 from fossdriver.server import FossServer
 from fossdriver.tasks import (CreateFolder, Upload, Scanners, Copyright, Reuse, BulkTextMatch, SPDXTV)
 
-del os.environ['http_proxy']
-del os.environ['https_proxy']
+os.environ.pop('http_proxy', None)
+os.environ.pop('https_proxy', None)
 
 config = FossConfig()
 configPath = os.path.join(os.path.expanduser('~'),".fossdriverrc")
